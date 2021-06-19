@@ -27,3 +27,10 @@ spec:
             port: {{ .Values.service.internalPort }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
+        volumeMounts:
+          - name: reports
+            mountPath: /reports/
+      volumes:
+        - name: reports
+          persistentVolumeClaim:
+            claimName: {{ template "fullname" . }}

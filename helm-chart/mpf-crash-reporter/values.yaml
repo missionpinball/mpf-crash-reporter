@@ -33,3 +33,7 @@ ingress:
     - secretName: mpf-crash-reporter-tls
       hosts:
         - crashes.missionpinball.org
+
+persistence:
+  accessMode: ReadWriteOnce
+  size: 20Gi

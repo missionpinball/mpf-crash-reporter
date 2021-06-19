@@ -47,7 +47,7 @@ struct CrashReport {
 
 async fn handle_crash_report(report: web::Json<CrashReport>) -> impl Responder {
     let report_uuid = Uuid::new_v4();
-    let file_path_string = format!("/tmp/{}", report_uuid.to_string());
+    let file_path_string = format!("/reports/{}", report_uuid.to_string());
     let mut file = match fs::File::create(file_path_string) {
         Ok(file) => file,
         Err(e) => return Err(error::ErrorInternalServerError(e)),
