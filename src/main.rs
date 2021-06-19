@@ -82,7 +82,7 @@ async fn main() -> std::io::Result<()> {
             .route("/report/{report_id}", web::get().to(show_crash_report))
             .route("/submit/", web::post().to(handle_crash_report))
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("0.0.0.0", 8080))?
     .run()
     .await
 }
