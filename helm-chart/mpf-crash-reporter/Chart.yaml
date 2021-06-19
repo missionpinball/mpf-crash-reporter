@@ -1,0 +1,4 @@
+apiVersion: v1
+description: MPF Crash Reporter Backend
+name: mpf-crash-reporter
+version: 0.1.0
